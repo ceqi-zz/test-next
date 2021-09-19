@@ -35,6 +35,7 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
 .next
 
 .env.local
@@ -45,9 +46,6 @@ jspm_packages
 # dotenv environment variables file (build for Zeit Now)
 .env
 .env.build
-
-# Dependency directories
-node_modules/
 
 # Logs
 npm-debug.log*
