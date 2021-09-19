@@ -1,7 +1,7 @@
-import FileNamer from "../components/FileNamer/FileNamer"
+import Product from "../components/Product/Product"
 
 const home = () => {
-    return <FileNamer />
+    return <Product />
 }
 
 export default home
