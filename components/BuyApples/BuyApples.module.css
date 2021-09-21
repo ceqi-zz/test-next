@@ -1,0 +1,15 @@
+.wrapper {
+    padding: 5px 20px; 
+}
+
+.wrapper fieldset {
+    margin: 20px 0;
+}
+
+.wrapper h1 {
+    color: lightseagreen;
+}
+
+.wrapper p {
+    color: lightseagreen;
+}
