@@ -1,7 +1,6 @@
-import { urlObjectKeys } from 'next/dist/shared/lib/utils'
 import {useReducer,useState} from 'react'
 import styles from '../BuyApples/BuyApples.module.css'
-
+import DateFromAPI from '../Date/Date'
 
 
 const formReducer = (state, event) => {
@@ -46,6 +45,9 @@ const BuyApples = () => {
         <div className={styles.wrapper} onSubmit={handleSubmit}>        
             <div>
                 <h1>How About Them Apples </h1>
+            </div>
+            <div>
+                <DateFromAPI />
             </div>
             {submitting 
             && <div>

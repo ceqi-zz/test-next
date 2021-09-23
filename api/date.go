@@ -1,15 +1,13 @@
 package handler
 
 import (
-	"fmt"
+	"encoding/json"
 	"net/http"
 	"time"
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello Next, Hello Go \n")
-
 	currentTime := time.Now().Format(time.RFC850)
-	fmt.Fprintf(w, currentTime)
-
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(currentTime)
 }
