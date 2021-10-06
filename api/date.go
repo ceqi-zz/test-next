@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func Handler(w http.ResponseWriter, r *http.Request) {
+func DateHandler(w http.ResponseWriter, r *http.Request) {
 	currentTime := time.Now().Format(time.RFC850)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(currentTime)

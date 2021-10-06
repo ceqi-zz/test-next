@@ -1,7 +1,7 @@
-import BuyApples from "../components/BuyApples/BuyApples"
+import Calculator from "../components/Calculator/Calculator"
 
 const home = () => {
-    return <BuyApples />
+    return <Calculator />
 }
 
 export default home
