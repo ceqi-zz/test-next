@@ -83,5 +83,5 @@ func handleGet(res http.ResponseWriter, req *http.Request) (string, []string) {
 
 func save(wordID string, definitions []string) bool {
 	// save word
-	return false
+	return true
 }
