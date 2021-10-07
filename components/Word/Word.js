@@ -13,12 +13,10 @@ const Word = () => {
 
     const handleOnClick = async (event) => {
         setLoading(true)
-        const res = await fetch(`/api/word?id=${word}`)
+        const res = await fetch(`/api/word/${word}`)
         const data = await res.json()
         setMeaning(data)
-        
         setLoading(false)
-
     }
 
     return (

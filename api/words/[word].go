@@ -33,12 +33,16 @@ type Sense struct {
 func WordHandler(res http.ResponseWriter, req *http.Request) {
 	switch req.Method {
 	case http.MethodGet:
-		handleGet(res, req)
-
+		wordID, definitions := handleGet(res, req)
+		err := save(wordID, definitions)
+		if err {
+			log.Fatalf("error saving the word %s", wordID)
+		}
+	}
 }
 
-func handleGet(res http.ResponseWriter, req *http.Request) {
-	wordID := string(req.URL.Query().Get("id"))
+func handleGet(res http.ResponseWriter, req *http.Request) (string, []string) {
+	wordID := string(req.URL.Query().Get("word"))
 
 	params := "fields=" + url.QueryEscape("definitions,examples")
 	url := "https://od-api.oxforddictionaries.com/api/v2/entries/en-us/" + wordID + "?" + params
@@ -74,4 +78,10 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 	}
 
 	json.NewEncoder(res).Encode(definitions)
+	return word.ID, definitions
+}
+
+func save(wordID string, definitions []string) bool {
+	// save word
+	return false
 }
